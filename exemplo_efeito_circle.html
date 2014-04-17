@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Fullscreen Slit Slider with CSS3 and jQuery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Fullscreen Slit Slider with CSS3 and jQuery" />
+        <meta name="keywords" content="slit slider, plugin, css3, transitions, jquery, fullscreen, autoplay" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+		<noscript>
+			<link rel="stylesheet" type="text/css" href="css/styleNoJS.css" />
+		</noscript>
+    </head>
+    <body>
+
+    	<section class="slider-container-circles" id="container">
+    		<div class="sl-slider-wrapper" id="slider">
+    			<div class="sl-slider">
+
+	    				<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+	    					<div class="sl-slide-inner">
+    							<div style="background-image: url(/plugins/fullscreenslitslider/images/1.jpg);" class="bg-img"></div>
+    							<h2>Atenção!</h2>
+    							<blockquote><p>As imagens são adicionadas no style do div como background, no plugin original era direto no CSS.</p><cite>Evandro Carreira - 11/04/2013</cite></blockquote>
+
+    						</div>
+    					</div>
+
+    					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+    						<div class="sl-slide-inner">
+    							<div style="background-image: url(/plugins/fullscreenslitslider/images/2.jpg);" class="bg-img"></div>
+    							<h2>Dúvidas?</h2>
+    							<blockquote><p>Leia os arquivos de exemplo, são dois efeitos no mesmo ~pacote~.</p><cite>Evandro Carreira - 11/04/2013</cite></blockquote>
+
+    						</div>
+    					</div>
+
+    					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+    						<div class="sl-slide-inner">
+    							<div style="background-image: url(/plugins/fullscreenslitslider/images/3.jpg);" class="bg-img"></div>
+    							<h2>Corta, gira, dá fade e volta!</h2>
+    							<blockquote><p>Vários efeitos de uma vez só e só precisa mudar os parametros data-xxxxxx do HTML, HTML5 Baby!.</p><cite>Evandro Carreira - 11/04/2013</cite></blockquote>
+
+    						</div>
+    					</div>
+
+    					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
+    						<div class="sl-slide-inner">
+    							<div style="background-image: url(/plugins/fullscreenslitslider/images/4.jpg);" class="bg-img"></div>
+    							<h2>@include</h2>
+    							<blockquote><p>Os elementos necessários são todos os que estão pra dentro da section (incluindo ela), os arquivos CSS e os JS que são incluídos no final do arquivo. <br> É bastante código, mas olha esse efeito maneiro, não pesa quase nada :)</p><cite>Evandro Carreira - 11/04/2013</cite></blockquote>
+    						
+    					</div>
+    				</div>
+
+    				<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+    					<div class="sl-slide-inner">
+    						<div style="background-image: url(/plugins/fullscreenslitslider/images/5.jpg);" class="bg-img"></div>
+    						<h2>Holy Git!</h2>
+    						<blockquote><p>Melhorias, correções de bugs e outras coisas: Só dar um checkout no branch desse plugin, executar as melhorias, dar commit e um push pro repositório oficial.</p><cite>Evandro Carreira - 11/04/2013</cite></blockquote>
+    					</div>
+    				</div>
+    		
+    				
+    			</div><!-- /sl-slider -->
+
+    			<nav class="nav-dots" id="nav-dots">
+    				<span class="nav-dot-current"></span>
+    				<span></span>
+    				<span></span>
+    				<span></span>
+    				<span></span>
+    			</nav>
+
+    			</div>
+
+    	</section><!-- /slider-wrapper -->
+
+    	<div class="content-wrapper">
+    		<h2>Sobre</h2>
+    		
+    		<p>@Evandro Carreira - 11/04/2014 <br>
+    			O Slider é bem fácil de configurar, só precisa usar um div slider na estrutura que estão os do examplo. Os dados para modificação ficam direto no HTML (data-orientation, data-slice1-rotation, etc.) , caso tenha adicionado o projeto pelo git vc não precisa adicionar as bibliotecas no template.php nem o código javascript.</p>
+    		</div>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
+		<script type="text/javascript">	
+		/*	Comentado pois a funcção foi adicionada no final do arquivo js/jquery.slitslider.js
+		$(function() {
+			
+				var Page = (function() {
+
+					var $nav = $( '#nav-dots > span' ),
+						slitslider = $( '#slider' ).slitslider( {
+							onBeforeChange : function( slide, pos ) {
+
+								$nav.removeClass( 'nav-dot-current' );
+								$nav.eq( pos ).addClass( 'nav-dot-current' );
+
+							}
+						} ),
+
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							$nav.each( function( i ) {
+							
+								$( this ).on( 'click', function( event ) {
+									
+									var $dot = $( this );
+									
+									if( !slitslider.isActive() ) {
+
+										$nav.removeClass( 'nav-dot-current' );
+										$dot.addClass( 'nav-dot-current' );
+									
+									}
+									
+									slitslider.jump( i + 1 );
+									return false;
+								
+								} );
+								
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+
+			});
+			*/
+				/**
+				 * Notes: 
+				 * 
+				 * example how to add items:
+				 */
+
+				/*
+				
+				var $items  = $('<div class="sl-slide sl-slide-color-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1"><div class="sl-slide-inner bg-1"><div class="sl-deco" data-icon="t"></div><h2>some text</h2><blockquote><p>bla bla</p><cite>Margi Clarke</cite></blockquote></div></div>');
+				
+				// call the plugin's add method
+				ss.add($items);
+
+				*/
+			
+		</script>
+	</body>
+</html>
